@@ -39,6 +39,9 @@ section{
 a{
   text-decoration: none;
 }
+a:hover{
+  text-decoration: none;
+}
 li {
   list-style-type: none;
 }
@@ -70,19 +73,21 @@ header{
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--main-color);
-
 }
+
 .navbar{
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
 }
+
 .nav-link{
   font-size: 0.94rem;
   padding: 4px 8px;
   border-radius: 0.2rem;
   color: var(--bg-color);
 }
+
 .nav-link:hover{
   color: var(--main-color);
   background-color: var(--container-color);
@@ -325,6 +330,8 @@ header{
   align-items: stretch;
   justify-content: center;
   gap: 2rem;
+  position: relative;
+
 }
 
 .proj-flex-item-card{
@@ -343,7 +350,7 @@ header{
 .proj-flex-item-card:hover{
   box-shadow: 0px 0px 10px rgba(0, 0, 155, 1);
 /*  border: 3px solid orangered;*/
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 .img-card{
@@ -379,27 +386,37 @@ header{
   margin: 0 1rem .5rem;
 }
 
+.li-link:link:hover{
+  text-decoration: none;
+}
 
-.proj-btn {
-  font-size: .8rem;
+.card-footer{
+  margin-top: 1rem;
+}
+
+.btn-proj {
+  font-size: 0.97rem;
   display: inline-flex;
   align-items: center;
   column-gap: 0.5rem;
   color: var(--bg-color);
   background: var(--main-color);
-  padding: 10px 12px;
+  padding: 12px 16px;
   border-radius: 0.4rem;
-  margin: 60px 1rem 15px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
-.proj-btn .proj-bx{
-  font-size: 1rem;
+.btn-proj .bx{
+  font-size: 1.3rem;
 }
-
-.proj-btn:hover{
+.btn-proj:hover{
   background: #546eff;
+  text-decoration: none;
   transition: 0.3s all linear;
 }
+
 /*=============== Project Section Styling End   ===============*/
 
 
@@ -539,7 +556,6 @@ footer p{
   margin: 0;
   padding: 1rem 0;
 }
-
 /*=============== Making Responsive Start ===============*/
 @media only screen and (max-width: 768px) {
   /* CSS rules for screens with a maximum width of 768 pixels go here */
@@ -547,6 +563,48 @@ footer p{
   .container{
     max-width: 80%;
     margin: auto;
+  }
+
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+
+
+  .logo{
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  .menu-icon{
+    display: flex;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 20px;
+    right: -100%;
+    width: 150px;
+    height: 100vh;
+    background: var(--box-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 250px 20px;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .open-menu{
+    right: 0;
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .nav-link{
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.1rem;
   }
 
   .heading {
